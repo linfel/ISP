@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gs_chashkin.isp.main.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/getObservableFromList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="getObservableFromList" />
+
+        <Button
+            android:id="@+id/just"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="just" />
+
+        <Button
+            android:id="@+id/fromArray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fromArray" />
+
+        <Button
+            android:id="@+id/fromIterable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fromIterable" />
+
+        <Button
+            android:id="@+id/updateWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="updateWeather" />
+
+        <Button
+            android:id="@+id/flow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="flow" />
+
+        <Button
+            android:id="@+id/intervalRange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="intervalRange" />
+
+        <Button
+            android:id="@+id/backPressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="backPressure" />
+
+        <Button
+            android:id="@+id/backPressureHandleFlowable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="backPressureHandleFlowable" />
+
+        <Button
+            android:id="@+id/subScribeOnUIChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="subScribeOnUIChange" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CreateArray!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.912"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.47" />
+
+    <TextView
+        android:id="@+id/createArrayList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="createArrayList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview" />
+
+    <Button
+        android:id="@+id/timerStartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/timerStartButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

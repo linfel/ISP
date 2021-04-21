@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/first_fragment_dest"
+        android:icon="@drawable/ic_baseline_1k_24"
+        android:title="@string/first"/>
+    <item
+        android:id="@+id/second_fragment_dest"
+        android:icon="@drawable/ic_baseline_2k_24"
+        android:title="@string/second"/>
+
+    <item
+        android:id="@+id/third_fragment_dest"
+        android:icon="@drawable/ic_baseline_3k_24"
+        android:title="@string/third"/>
+
+</menu>
