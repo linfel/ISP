@@ -18,16 +18,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
-import com.gs_chashkin.isp.IspApplication
 import com.gs_chashkin.isp.MyAlarmReceiver
 import com.gs_chashkin.isp.R
 import com.gs_chashkin.isp.databinding.ThirdFragmentBinding
 import com.gs_chashkin.isp.main.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class ThirdFragment : Fragment() {
 
     companion object {
@@ -42,7 +42,7 @@ class ThirdFragment : Fragment() {
     lateinit var notificationManager: NotificationManager
 
     private val myReceiver = MyNotificationReceiver()
-    private lateinit var viewModel: ThirdViewModel
+    @Inject lateinit var viewModel: ThirdViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,11 +52,8 @@ class ThirdFragment : Fragment() {
         createNotificationChannel()
         requireActivity().registerReceiver(myReceiver, IntentFilter(ACTION_UPDATE_NOTIFICATION))
         setNotificationButtonState(true, false, false);
-        viewModel = ViewModelProviders.of(
-            this,
-            ThirdViewModelFactory((requireActivity().application as IspApplication).appContainer)
-        )
-            .get(ThirdViewModel::class.java)
+
+        binding.txtTimer.text = viewModel.number
 
         return binding.root
     }

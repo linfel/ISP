@@ -1,12 +1,9 @@
 package com.gs_chashkin.isp.presentation.thirdfragment
 
 import androidx.lifecycle.ViewModel
-import com.gs_chashkin.isp.di.AppContainer
+import com.example.core.SomeClass
+import javax.inject.Inject
 
-class ThirdViewModel(private val appContainer: AppContainer) : ViewModel() {
-
-    fun ThirdViewModel() {
-
-    }
-
+class ThirdViewModel @Inject constructor(someClass: SomeClass) : ViewModel() {
+    val number = someClass.doAThing()
 }

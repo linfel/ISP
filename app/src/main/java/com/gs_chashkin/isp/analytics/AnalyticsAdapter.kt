@@ -1,4 +1,4 @@
-package com.gs_chashkin.isp
+package com.gs_chashkin.isp.analytics
 
 import javax.inject.Inject
 

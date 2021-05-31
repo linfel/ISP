@@ -4,7 +4,7 @@
     package="com.gs_chashkin.isp">
 
     <application
-        android:name=".IspApplication"
+        android:name=".main.IspApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
