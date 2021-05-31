@@ -18,7 +18,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.gs_chashkin.isp.IspApplication
 import com.gs_chashkin.isp.MyAlarmReceiver
 import com.gs_chashkin.isp.R
@@ -52,16 +52,18 @@ class ThirdFragment : Fragment() {
         createNotificationChannel()
         requireActivity().registerReceiver(myReceiver, IntentFilter(ACTION_UPDATE_NOTIFICATION))
         setNotificationButtonState(true, false, false);
-
-        viewModel = ThirdViewModel((requireActivity().application as IspApplication).appContainer)
+        viewModel = ViewModelProviders.of(
+            this,
+            ThirdViewModelFactory((requireActivity().application as IspApplication).appContainer)
+        )
+            .get(ThirdViewModel::class.java)
 
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ThirdViewModel::class.java)
-        // TODO: Use the ViewModel
+
 
         binding.apply {
             notify.setOnClickListener {

@@ -1,6 +1,5 @@
 package com.gs_chashkin.isp
 
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,16 +21,16 @@ class AnalyticsServiceImpl @Inject constructor(
     }
 }
 
-@Module
-@InstallIn(ActivityComponent::class)
-abstract class AnalyticsModule {
-
-    @Binds
-    abstract fun bindAnalyticsService(
-        analyticsServiceImpl: AnalyticsServiceImpl
-    ): AnalyticsService
-
-}
+//@Module
+//@InstallIn(ActivityComponent::class)
+//abstract class AnalyticsModule {
+//
+//    @Binds
+//    abstract fun bindAnalyticsService(
+//        analyticsServiceImpl: AnalyticsServiceImpl
+//    ): AnalyticsService
+//
+//}
 
 @Module
 @InstallIn(ActivityComponent::class)
@@ -42,7 +41,7 @@ object AnalyticsModuleTwo {
         // Potential dependencies of this type
     ): AnalyticsService {
         return Retrofit.Builder()
-            .baseUrl("https://example.com")
+            .baseUrl("https://google.com")
             .build()
             .create(AnalyticsService::class.java)
     }
