@@ -19,6 +19,7 @@ import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.gs_chashkin.isp.IspApplication
 import com.gs_chashkin.isp.MyAlarmReceiver
 import com.gs_chashkin.isp.R
 import com.gs_chashkin.isp.databinding.ThirdFragmentBinding
@@ -51,6 +52,9 @@ class ThirdFragment : Fragment() {
         createNotificationChannel()
         requireActivity().registerReceiver(myReceiver, IntentFilter(ACTION_UPDATE_NOTIFICATION))
         setNotificationButtonState(true, false, false);
+
+        viewModel = ThirdViewModel((requireActivity().application as IspApplication).appContainer)
+
         return binding.root
     }
 
