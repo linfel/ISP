@@ -7,8 +7,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.core.SomeClass
 import com.example.core.SomeInterface
+import com.example.core.di.Impl1
+import com.example.core.di.Impl2
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.gson.Gson
 import com.gs_chashkin.isp.R
 import com.gs_chashkin.isp.analytics.AnalyticsAdapter
 import com.gs_chashkin.isp.di.AnalyticsModuleTwo
@@ -24,10 +25,14 @@ class MainActivity : AppCompatActivity() {
     var analyticsTwo = AnalyticsModuleTwo.provideAnalyticsService()
     @Inject
     lateinit var someClass: SomeClass
+    @Impl1
     @Inject
     lateinit var someInterfaceImpl: SomeInterface
+    @Impl2
     @Inject
-    lateinit var gson: Gson
+    lateinit var someInterfaceImpl2: SomeInterface
+//    @Inject
+//    lateinit var gson: Gson
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +48,8 @@ class MainActivity : AppCompatActivity() {
         Log.d("Tag", someClass.doAThing())
         Log.d("Tag", someClass.doAnotherThing())
         Log.d("Tag", someInterfaceImpl.doInterfaceThing())
+        Log.d("Tag", someInterfaceImpl2.doInterfaceThing())
+
 
 
 

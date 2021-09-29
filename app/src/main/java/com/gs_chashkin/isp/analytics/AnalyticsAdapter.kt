@@ -4,7 +4,8 @@ import javax.inject.Inject
 
 
 //constructor injection
-class AnalyticsAdapter @Inject constructor(
+class AnalyticsAdapter
+@Inject constructor(
     private val service: AnalyticsService
 ) {
     // class stuff

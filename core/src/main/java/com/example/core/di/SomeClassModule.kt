@@ -1,6 +1,8 @@
 package com.example.core.di
 
 import com.example.core.SomeClass
+import com.example.core.SomeInterfaceImpl
+import com.example.core.SomeInterfaceImpl2
 import com.example.core.SomeOtherClass
 import dagger.Module
 import dagger.Provides
@@ -14,8 +16,15 @@ object SomeClassModule {
 
     @Provides
     @ViewModelScoped
-    fun providesSomeClass(someOtherClass: SomeOtherClass): SomeClass {
-        return SomeClass(someOtherClass)
+    fun providesSomeClass(
+        someOtherClass: SomeOtherClass,
+        someInterfaceImpl: SomeInterfaceImpl,
+        someInterfaceImpl2: SomeInterfaceImpl2
+    ): SomeClass {
+        return SomeClass(
+            someOtherClass,
+            someInterfaceImpl,
+            someInterfaceImpl2)
     }
 
 }

@@ -18,6 +18,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.gs_chashkin.isp.MyAlarmReceiver
 import com.gs_chashkin.isp.R
 import com.gs_chashkin.isp.databinding.ThirdFragmentBinding
@@ -25,7 +26,6 @@ import com.gs_chashkin.isp.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class ThirdFragment : Fragment() {
@@ -42,7 +42,9 @@ class ThirdFragment : Fragment() {
     lateinit var notificationManager: NotificationManager
 
     private val myReceiver = MyNotificationReceiver()
-    @Inject lateinit var viewModel: ThirdViewModel
+
+//    @Inject lateinit var viewModel: ThirdViewModel
+    private val viewModel: ThirdViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

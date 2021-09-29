@@ -5,10 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.work.WorkManager
 import com.gs_chashkin.isp.R
+//import com.gs_chashkin.isp.WorkRepository
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SecondFragment : Fragment() {
+
+//    @Inject
+//    lateinit var workRepository: WorkRepository
 
     companion object {
         fun newInstance() = SecondFragment()
@@ -23,10 +30,9 @@ class SecondFragment : Fragment() {
         return inflater.inflate(R.layout.second_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SecondViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+//        WorkManager.getInstance(requireContext()).enqueue(workRepository.constrainedRequest)
     }
 
 }
