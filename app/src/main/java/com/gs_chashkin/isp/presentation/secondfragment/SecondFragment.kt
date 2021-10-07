@@ -30,6 +30,8 @@ class SecondFragment : Fragment() {
         return inflater.inflate(R.layout.second_fragment, container, false)
     }
 
+    //Comment
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 //        WorkManager.getInstance(requireContext()).enqueue(workRepository.constrainedRequest)
